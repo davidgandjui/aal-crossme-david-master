@@ -1,0 +1,38 @@
+{
+  "ShowHidden": false,
+  "ShowAllFiles": false,
+  "SaveDisabled": false,
+  "SSoTmeProjectId": "ba2fc7fb-19b8-498a-a22b-81ca70bba9d1",
+  "Name": "aal-crossme-david",
+  "ProjectSettings": [
+    {
+      "ProjectSettingId": "4d26b2e4-791b-4dd9-9ffc-2f21efb3848f",
+      "Name": "project-name",
+      "Value": "aal-crossme-david"
+    }
+  ],
+  "ProjectTranspilers": [
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "19d8142a-2f4d-46ac-9de6-77441f233192",
+        "Name": "AirtableToXml",
+        "Description": "Extracts the contents of an airtable base as a single Xml file."
+      },
+      "ProjectTranspilerId": "0d46197c-3392-4c54-82a2-4556452ec278",
+      "Name": "AirtableToXml",
+      "RelativePath": "/SSoT",
+      "CommandLine": "airtable/airtable-to-xml -p baseId=appzyEaR1fyeAGoBt"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "4b713f03-1d9f-42f2-b02f-e3cdbd237bb3",
+        "Name": "XmlXsltTransform",
+        "Description": "Given an Xml and Xslt file, will process and \"split\" a resulting fileset."
+      },
+      "ProjectTranspilerId": "adaf4abb-fea4-4f6a-8374-aed79e309918",
+      "Name": "XmlXsltTransform",
+      "RelativePath": "/docs",
+      "CommandLine": "codee42/xml-xslt-transform -i ..\\SSoT\\Airtable.xml -i CreateDocs.xslt"
+    }
+  ]
+}
