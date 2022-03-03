@@ -6,6 +6,7 @@
     <xsl:param name="output-filename" select="'output.txt'" />
 
 	<xsl:variable name="settings" select="//Settings/Settings" />
+	<xsl:variable name="texts" select="//Texts/Text" />
 	<xsl:variable name="languages" select="//Languages/Language" />
 	<xsl:variable name="levels" select="//Levels/Level" />
 
@@ -44,6 +45,8 @@
 				<br/>
 				<xsl:value-of select="Description" />
 				
+				<h3>Level Solution</h3>
+				<pre><xsl:value-of select="SolutionBinary"/></pre>
             </div>    
         </xsl:for-each>
 		
@@ -56,6 +59,20 @@
             <xsl:sort select="Name" />
             <div>
                 <xsl:value-of select="Name" />
+				<br/>
+				<xsl:value-of select="Description" />
+				
+            </div>    
+        </xsl:for-each>
+		
+				        <h3>Texts</h3>
+        <p>
+            These are the many texts shown in this game
+        </p>
+        <xsl:for-each select="$texts">    
+            <xsl:sort select="Token" />
+            <div>
+                <xsl:value-of select="Token" />
 				<br/>
 				<xsl:value-of select="Description" />
 				
