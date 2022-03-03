@@ -32,20 +32,19 @@
         <p>
             This is the specification for David's version of Cross-me.
         </p>
-
-        <h3>Levels</h3>
         <p>
-            There are <xsl:value-of select="count($levels)" /> Levels defined in this game. 
+            There are <xsl:value-of select="count($levels)" /> Levels defined in this game.
         </p>
+		<h2>Levels</h2>
+        
         <xsl:for-each select="$levels">    
             <xsl:sort select="MenuName" />
             <div>
 				<h4><xsl:value-of select="LevelName" />
                 <xsl:value-of select="MenuName" /></h4>
-				<br/>
 				<xsl:value-of select="Description" />
 				
-				<h4>Level Solutions</h4>
+				<xsl:text>Level Solution</xsl:text>
 				<pre><xsl:value-of select="SolutionBinary"/></pre>
             </div>    
         </xsl:for-each>
