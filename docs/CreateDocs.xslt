@@ -35,20 +35,26 @@
         <p>
             There are <xsl:value-of select="count($levels)" /> Levels defined in this game.
         </p>
+
 		<h2>Levels</h2>
-        
-        <xsl:for-each select="$levels">    
+        <br/>
+		
+        <xsl:for-each select="$levels">
+			
             <xsl:sort select="MenuName" />
             <div>
-				<h4><xsl:value-of select="LevelName" />
-                <xsl:value-of select="MenuName" /></h4>
-				<xsl:value-of select="Description" />
-				
+				<h3><xsl:value-of select="LevelName" />
+                <xsl:value-of select="MenuName" /></h3>
 				<xsl:text>Level Solution</xsl:text>
-				<pre><xsl:value-of select="SolutionBinary"/></pre>
+				
+				<pre><xsl:value-of select = "translate(SolutionBinary,'10','x ')" />
+				
+				</pre>
             </div>    
+			
+			
         </xsl:for-each>
-		
+		<br/>
 		
         <h3>Languages</h3>
         <p>
@@ -60,9 +66,9 @@
                 <xsl:value-of select="Name" />
 				<br/>
 				<xsl:value-of select="Description" />
-				
             </div>    
         </xsl:for-each>
+		
 		
 				        <h3>Texts</h3>
         <p>
@@ -74,7 +80,6 @@
                 <xsl:value-of select="Token" />
 				<br/>
 				<xsl:value-of select="Description" />
-				
             </div>    
         </xsl:for-each>
 		
@@ -88,7 +93,6 @@
                 <xsl:value-of select="Name" />
 				<br/>
 				<xsl:value-of select="Description" />
-				
             </div>    
         </xsl:for-each>
     </body>
