@@ -5,6 +5,7 @@
 
     <xsl:param name="output-filename" select="'output.txt'" />
 
+	<xsl:variable name="settings" select="//Settings/Settings" />
 	<xsl:variable name="languages" select="//Languages/Language" />
 	<xsl:variable name="levels" select="//Levels/Level" />
 
@@ -52,6 +53,20 @@
             There are <xsl:value-of select="count($languages)" /> languages defined in this game. 
         </p>
         <xsl:for-each select="$languages">    
+            <xsl:sort select="Name" />
+            <div>
+                <xsl:value-of select="Name" />
+				<br/>
+				<xsl:value-of select="Description" />
+				
+            </div>    
+        </xsl:for-each>
+		
+		        <h3>Settings</h3>
+        <p>
+            There are <xsl:value-of select="count($settings)" /> settings defined in this game. 
+        </p>
+        <xsl:for-each select="$settings">    
             <xsl:sort select="Name" />
             <div>
                 <xsl:value-of select="Name" />
