@@ -40,12 +40,12 @@
         <xsl:for-each select="$levels">    
             <xsl:sort select="MenuName" />
             <div>
-				<xsl:value-of select="MenuName" />
-                <xsl:value-of select="LevelName" />
+				<h4><xsl:value-of select="LevelName" />
+                <xsl:value-of select="MenuName" /></h4>
 				<br/>
 				<xsl:value-of select="Description" />
 				
-				<h3>Level Solution</h3>
+				<h4>Level Solutions</h4>
 				<pre><xsl:value-of select="SolutionBinary"/></pre>
             </div>    
         </xsl:for-each>
