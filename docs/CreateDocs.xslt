@@ -9,7 +9,11 @@
 	<xsl:variable name="texts" select="//Texts/Text" />
 	<xsl:variable name="languages" select="//Languages/Language" />
 	<xsl:variable name="levels" select="//Levels/Level" />
-
+	<xsl:variable name="versions" select="//Versions/Version" />
+	<xsl:variable name="profiles" select="//Profiles/Profile" />
+	<xsl:variable name="gameplays" select="//Gameplays/Gameplay" />
+	<xsl:variable name="appitems" select="//AppItems/AppItem" />
+	
     <xsl:template match="@* | node()">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()"/>
@@ -48,7 +52,8 @@
 				<xsl:text>Level Solution</xsl:text>
 				
 				<pre><xsl:value-of select = "translate(SolutionBinary,'10','x ')" />
-				
+					
+<xsl:value-of select="LevelSize" />
 				</pre>
             </div>    
 			
