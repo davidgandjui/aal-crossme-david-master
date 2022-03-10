@@ -53,7 +53,11 @@
 				
 				<pre><xsl:value-of select = "translate(SolutionBinary,'10','x ')" />
 					
-<xsl:value-of select="LevelSize" />
+Level Size: <xsl:value-of select="LevelSize" />	
+Total Cells: <xsl:value-of select="TotalCells" />
+Group Number: <xsl:value-of select="GroupNumber" />
+Level Number: <xsl:value-of select="LevelNumber" />
+					
 				</pre>
             </div>    
 			
@@ -61,7 +65,7 @@
         </xsl:for-each>
 		<br/>
 		
-        <h3>Languages</h3>
+        <h2>Languages</h2>
         <p>
             There are <xsl:value-of select="count($languages)" /> languages defined in this game. 
         </p>
@@ -75,7 +79,7 @@
         </xsl:for-each>
 		
 		
-				        <h3>Texts</h3>
+				        <h2>Texts</h2>
         <p>
             These are the many texts shown in this game
         </p>
@@ -88,7 +92,7 @@
             </div>    
         </xsl:for-each>
 		
-		        <h3>Settings</h3>
+		        <h2>Settings</h2>
         <p>
             There are <xsl:value-of select="count($settings)" /> settings defined in this game. 
         </p>
@@ -100,6 +104,19 @@
 				<xsl:value-of select="Description" />
             </div>    
         </xsl:for-each>
+		
+				        <h2>AppItems</h2>
+        <p>
+            These are buttons available to interact with in CrossMe
+        </p>
+        <xsl:for-each select="$appitems">    
+            <xsl:sort select="ButtonPurpose" />
+            <div>
+                <xsl:value-of select="ButtonPurpose" />
+				<pre>  (<xsl:value-of select="DisplayName" />)  </pre>
+            </div>    
+        </xsl:for-each>
+		
     </body>
                     </html>
 </xsl:element>
